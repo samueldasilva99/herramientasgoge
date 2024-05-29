@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Consumo de Energía Eléctrica</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        #container {
+            max-width: 90%; 
+            margin: auto; 
+            padding: 20px; 
+            border: 1px solid #ccc; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        }
+        </style>
+</head>
+<body>
+    <header>
+        <h1>Gobierno Ejemplar 2024</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Volver atrás</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div id="container">
+            <h2>Simulador de consumo electrico</h2>
+            <p>Con esta herramienta vas a poder simular el consumo electrico de tu hogar y disgregarlo por sector de consumo (Climatización, Agua Caliente Sanitaria, Iluminacion y Artefatos).</p>
+            
+            <p>Solamente se necesita identificar un equipo presente en tu casa, seleccionarlo en la lista desplegable, indicar la cantidad de equipos similares, un estimativo de uso horario por dia y cuantos dias a la semana.</p>
+            <p>Finalmente, repetí el procedemiento hasta completar el relevamiento de todos los equipos y podrás observar la situacion energetica de tu hogar.</p>
+    <div class="form-container">
+        <label for="equipo">Equipo:</label>
+        <select id="equipo">
+            <option value="" selected disabled hidden>Seleccione un equipo</option>
+        </select>
+
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" min="1">
+
+        <label for="horas_dia">Horas de uso por día:</label>
+        <input type="number" id="horas_dia" min="1">
+
+        <label for="dias_semana">Días de uso por semana:</label>
+        <input type="number" id="dias_semana" min="1">
+
+        <button id="cargar">Cargar</button>
+    </div>
+
+    <div class="result-container">
+        <h2>Consumo Mensual: <span id="consumo-mensual">0</span> kWh</h2>
+        <div class="progress-bar">
+            <div id="progress" class="progress"></div>
+        </div>
+        <table id="tabla-equipos">
+            <thead>
+                <tr>
+                    <th>Equipo</th>
+                    <th>Cantidad</th>
+                    <th>Horas/Día</th>
+                    <th>Días/Semana</th>
+                    <th>kWh/mes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Filas de equipos cargados -->
+            </tbody>
+        </table>
+        <div class="chart-container">
+            <h3>Consumo por sector</h3>
+            <canvas id="grafico-torta"></canvas>
+        </div>
+    </div>
+</div>
+</main>
+<footer>
+    <p>&copy; 2024 BA AMBIENTE</p>
+</footer>
+<script src="scriptsimulador.js"></script>
+</body>
+</html>
