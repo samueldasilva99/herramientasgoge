@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero Energético - Gobierno Ejemplar 2024</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #container {
+            max-width: 90%; 
+            margin: auto; 
+            padding: 20px; 
+            border: 1px solid #ccc; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        }
+        #tablero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 145vh; 
+            width: 100%; 
+            margin-top: 20px; 
+        }
+        iframe {
+            border: none;
+            width: 100%; 
+            height: 100%; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gobierno Ejemplar 2024</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Volver atrás</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div id="container">
+            <h2>Tablero Gobierno Ejemplar</h2>
+            <p>En el siguiente tablero se ven los datos energéticos, economicos y administrativos de los 25 edificios del programa Gobierno Ejemplar.</p>
+            
+            <p>Si no estan aplicados ninguna seleccion de "Año" y "Edificio" se está viendo la informacion referida a los 25 edificios durante 2022 y 2023, a eso lo vamos a llamar "total".</p>
+            <p>Los porcentajes que se ven debajo de los valores de Energía Consumida Anual (kWh) y Monto Pagado Anual ($) estan referidos al "total" segun el valor que se muestra.</p>
+            <section id="tablero">
+                <iframe src="https://lookerstudio.google.com/embed/reporting/08c6bcd8-de99-41bd-94bf-45219dd4e5d2/page/bixxD" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 BA AMBIENTE</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
