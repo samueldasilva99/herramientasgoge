@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #ffd54f;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    background-color: #444;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #fff;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: #ffd54f;
+}
+
+main {
+    flex: 1;
+    padding: 1rem;
+    padding-bottom: 60px; /* Ajusta este valor si necesitas más espacio para contenido */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto; /* Añade esta línea para que el footer se coloque al final */
+}
+
+section p {
+    margin-bottom: 20px; /* Espacio entre párrafos */
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-top: 20px;
+}
+
+.form-container label, .form-container select, .form-container input {
+    margin-bottom: 10px;
+}
+
+.result-container {
+    margin-top: 20px;
+    width: 80%;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 30px;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.progress.green {
+    background-color: green;
+}
+
+.progress.yellow {
+    background-color: yellow;
+}
+
+.progress.orange {
+    background-color: orange;
+}
+
+.progress.red {
+    background-color: red;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+#grafico-torta {
+    display: block;
+    margin: 0 auto;
+}
+
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+h3 {
+    margin-bottom: 20px;
+}
