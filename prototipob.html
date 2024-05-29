@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumo Energetico PSD</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #container {
+            max-width: 90%; 
+            margin: auto; 
+            padding: 20px; 
+            border: 1px solid #ccc; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        }
+        .table-container {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .centered {
+            text-align: center;
+        }
+        .medidor-input {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gobierno Ejemplar 2024</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Volver atrás</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div id="container">
+            <h2>Buscador de facturas electricas en CABA 2023</h2>
+            <p>En el siguiente buscador podrás conocer los consumos registrados por un medidor de CUALQUIER dependencia publica de GCBA.</p>
+            
+            <p>Solamente se necesita contactarse con el edificio publico en cuestion o solicitar una factura electrica con el fin de identificar EL o LOS medidores del edificio.</p>
+            <p>Luego, se coloca el N° de Medidor en el buscador y se da click en "Buscar". Una vez terminado, se da click en "Limpiar" y deja todo listo para la siguiente busqueda.</p>
+    <label for="medidor">Ingrese N° de Medidor:</label>
+    <input type="text" id="medidor" class="medidor-input" maxlength="15">
+    <div class="button-container">
+        <button onclick="buscarYActualizar()">Buscar</button>
+        <button onclick="limpiarDatos()">Limpiar</button>
+    </div>
+    
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="5" class="centered">Año: 2023</th>
+                </tr>
+                <tr>
+                    <th>Mes</th>
+                    <th>Energia (kWh)</th>
+                    <th>Potencia Adq. (kW)</th>
+                    <th>Potencia Cont. (kW)</th>
+                    <th>Monto ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Enero</td>
+                    <td id="energia_enero"></td>
+                    <td id="potenciaAdq_enero"></td>
+                    <td id="potenciaCont_enero"></td>
+                    <td id="monto_enero"></td>
+                </tr>
+                <tr>
+                    <td>Febrero</td>
+                    <td id="energia_febrero"></td>
+                    <td id="potenciaAdq_febrero"></td>
+                    <td id="potenciaCont_febrero"></td>
+                    <td id="monto_febrero"></td>
+                </tr>
+                <tr>
+                    <td>Marzo</td>
+                    <td id="energia_marzo"></td>
+                    <td id="potenciaAdq_marzo"></td>
+                    <td id="potenciaCont_marzo"></td>
+                    <td id="monto_marzo"></td>
+                </tr>
+                <tr>
+                    <td>Abril</td>
+                    <td id="energia_abril"></td>
+                    <td id="potenciaAdq_abril"></td>
+                    <td id="potenciaCont_abril"></td>
+                    <td id="monto_abril"></td>
+                </tr>
+                <tr>
+                    <td>Mayo</td>
+                    <td id="energia_mayo"></td>
+                    <td id="potenciaAdq_mayo"></td>
+                    <td id="potenciaCont_mayo"></td>
+                    <td id="monto_mayo"></td>
+                </tr>
+                <tr>
+                    <td>Junio</td>
+                    <td id="energia_junio"></td>
+                    <td id="potenciaAdq_junio"></td>
+                    <td id="potenciaCont_junio"></td>
+                    <td id="monto_junio"></td>
+                </tr>
+                <tr>
+                    <td>Julio</td>
+                    <td id="energia_julio"></td>
+                    <td id="potenciaAdq_julio"></td>
+                    <td id="potenciaCont_julio"></td>
+                    <td id="monto_julio"></td>
+                </tr>
+                <tr>
+                    <td>Agosto</td>
+                    <td id="energia_agosto"></td>
+                    <td id="potenciaAdq_agosto"></td>
+                    <td id="potenciaCont_agosto"></td>
+                    <td id="monto_agosto"></td>
+                </tr>
+                <tr>
+                    <td>Septiembre</td>
+                    <td id="energia_septiembre"></td>
+                    <td id="potenciaAdq_septiembre"></td>
+                    <td id="potenciaCont_septiembre"></td>
+                    <td id="monto_septiembre"></td>
+                </tr>
+                <tr>
+                    <td>Octubre</td>
+                    <td id="energia_octubre"></td>
+                    <td id="potenciaAdq_octubre"></td>
+                    <td id="potenciaCont_octubre"></td>
+                    <td id="monto_octubre"></td>
+                </tr>
+                <tr>
+                    <td>Noviembre</td>
+                    <td id="energia_noviembre"></td>
+                    <td id="potenciaAdq_noviembre"></td>
+                    <td id="potenciaCont_noviembre"></td>
+                    <td id="monto_noviembre"></td>
+                </tr>
+                <tr>
+                    <td>Diciembre</td>
+                    <td id="energia_diciembre"></td>
+                    <td id="potenciaAdq_diciembre"></td>
+                    <td id="potenciaCont_diciembre"></td>
+                    <td id="monto_diciembre"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="potenciaChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="lineChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scriptprototipob.js"></script>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 BA AMBIENTE</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
